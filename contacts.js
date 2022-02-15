@@ -37,7 +37,7 @@ async function listContacts() {
 async function getContactById(contactId) {
   const contacts = await readContent();
   const contact = contacts.find((el) => el.id === contactId);
-  return contact;
+  return contact ? contact : "contact is not exist";
 }
 
 async function removeContact(contactId) {
